@@ -1,0 +1,31 @@
+spring:
+  application:
+    name: clean
+
+
+springdoc:
+  swagger-ui:
+    enabled: true
+    path: /docs
+    url: /springdoc/openapi3-user.json
+    operations-sorter: alpha
+    tags-sorter: alpha
+  api-docs:
+    enabled: true
+    path: /api-docs-user
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info,metrics,prometheus,env,beans,loggers,threaddump,heapdump,configprops,mappings,shutdown
+  endpoint:
+    health:
+      show-details: always
+    prometheus:
+      access: unrestricted
+  server:
+    port: 18080
+
+server:
+  port: 8080
